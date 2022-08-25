@@ -1,10 +1,21 @@
 let handler = async m => m.reply(`
-╭─「 Donasi • Dana 」
-│ •  [0878-8717-3186]]
-│ •  [0878-8717-3186]
-╰────
+╭─「 Donasi 」
+│
+│  DONASI SEIKHLASNYA BANG :)
+│
+│ - E-money
+│ • 087887173186 ( Dana )
+│
+│ - PULSA
+│ • 081283186765 ( TELKOMSEL )
+│  
+│
+│ - Saweria
+│ •https://saweria.co/HarukaMD
+│
+╰───────────
 `.trim()) // Tambah sendiri kalo mau
-handler.help = ['donasi']
+handler.help = ['Sedekah']
 handler.tags = ['info']
 handler.command = /^dona(te|si)$/i
 
