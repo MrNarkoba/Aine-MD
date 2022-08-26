@@ -62,7 +62,7 @@ Hai, %ucapan %name! 👋
   header: " *%category*",
   body: " • %cmd %islimit %isPremium",
   footer: "\n",
-  after: `*Made by Haruka-MD×፝֟͜×*
+  after: `*Made by ♡*
 *%npmname* | %version
 ${"```%npmdesc```"}
 `,
@@ -228,8 +228,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       text.trim(),
       "Ⓟ premium | Ⓛ limit",
       null,
-      "https://aiinne.github.io/",
-      "Website",
+      "https://chat.whatsapp.com/HDH4ugvRAey0jxDgkmwkzg",
+      "GROUP",
       "",
       "",
       [
@@ -251,8 +251,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                             hydratedFooterText:'Ⓟ premium | Ⓛ limit',
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'GROUP',
-                                    url: 'https://chat.whatsapp.com/HDH4ugvRAey0jxDgkmwkzg'
+                                    displayText: 'Website',
+                                    url: 'https://Ainebot.github.io/'
                                 }
                             }, {
                                 quickReplyButton: {
