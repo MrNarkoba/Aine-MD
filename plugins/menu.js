@@ -239,3 +239,8 @@ function ucapan() {
         }	
         return ucapanWaktu
 
+conn.sendHydrated(m.chat, text.trim(), ,group, pp, 'https://chat.whatsapp.com/HDH4ugvRAey0jxDgkmwkzg', 'group', null, null, [
+      ['Donate', '/donasi'],
+      ['Speed', '/ping'],
+      ['Owner', '/owner']
+    ], m)
