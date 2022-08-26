@@ -228,8 +228,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       text.trim(),
       "Ⓟ premium | Ⓛ limit",
       null,
-      "https://chat.whatsapp.com/HDH4ugvRAey0jxDgkmwkzg",
-      "GROUP",
+      "https://m.youtube.com/channel/UCis8xP_szPuzRYnL-hgw6vA",
+      "YOUTUBE",
       "",
       "",
       [
