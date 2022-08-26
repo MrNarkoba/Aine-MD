@@ -1,16 +1,30 @@
 let handler = async m => m.reply(`
 
 *RULES BOT*
+- HARUS SUBSCRIBE CHANNEL GUA
+- GA SUBSCRIBE GUA SUMPAH IN 
+- LU GAGU SEUMUR HIDUP LU
 -JANGAN SPAM BOT
 -JANGAN TELPON/VC BOT
 -JANGAN CHAT BOT/OWNER UNTUK MINTA SAVE
 *MELANGGAR?* ( *BANED PERMANEN* )
 
-Donasi
- • Dana/OVO/Pulsa [Smartfren]
- - 0882009085754
- • Saweria
- - https://saweria.co/Mochraihans
+╭─「 Donasi 」
+│
+│  DONASI SEIKHLASNYA BANG :)
+│
+│ - E-money
+│ • 087887173186 ( Dana )
+│
+│ - PULSA
+│ • 081283186765 ( TELKOMSEL )
+│  
+│ - Saweria
+│ •https://saweria.co/HarukaMD
+│
+| - Link YouTube
+| •https://m.youtube.com/channel/UCis8xP_szPuzRYnL-hgw6vA
+╰───────────
 
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['rules']
