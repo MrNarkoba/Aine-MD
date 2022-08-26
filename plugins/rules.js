@@ -22,8 +22,8 @@ let handler = async m => m.reply(`
 │ - Saweria
 │ •https://saweria.co/HarukaMD
 │
-| - Link YouTube
-| •https://tinyurl.com/2jxrhho6
+ | - Link YouTube
+ | •https://tinyurl.com/2jxrhho6
 ╰───────────
 
 `.trim()) // Tambah sendiri kalo mau
