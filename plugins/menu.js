@@ -52,7 +52,7 @@ Hai, %ucapan %name! 🍟
   header: ' *%category*',
   body: ' • %cmd %islimit %isPremium',
   footer: '\n',
-  after: `*Made by Ren*
+  after: `*Made by Haruka-MD×፝֟͜×*
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
