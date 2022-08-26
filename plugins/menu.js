@@ -157,7 +157,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.sendHydrated(m.chat, text.trim(), 'Follow Instagram Gua Anj', null, 'https://www.instagram.com/haruka.md04/', 'Instagram', '', '', [
       ['Sedekah', '/donasi'],
-      ['Owner', '/owner'],
+      ['Sewa Bot', '/sewa bot'],
       ['Rules', '/rules']
     ], m)
     /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
