@@ -11,7 +11,7 @@ let handler = async m => m.reply(`
 
 ╭─「 Donasi 」
 │
-│  DONASI SEIKHLASNYA BANG :)
+│  SEIKHLASNYA BANG :)
 │
 │ - E-money
 │ • 087887173186 ( Dana )
@@ -22,8 +22,9 @@ let handler = async m => m.reply(`
 │ - Saweria
 │ •https://saweria.co/HarukaMD
 │
- | - Link YouTube
- | •https://tinyurl.com/2jxrhho6
+│ - Link YouTube
+│ •https://tinyurl.com/2jxrhho6
+│
 ╰───────────
 
 `.trim()) // Tambah sendiri kalo mau
