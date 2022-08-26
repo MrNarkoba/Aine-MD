@@ -62,7 +62,7 @@ Hai, %ucapan %name! 👋
   header: " *%category*",
   body: " • %cmd %islimit %isPremium",
   footer: "\n",
-  after: `*Made by ♡*
+  after: `*Made by Akmal*
 *%npmname* | %version
 ${"```%npmdesc```"}
 `,
@@ -233,9 +233,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       "",
       "",
       [
-        ["Donate", "/donasi"],
-        ["Sewa Bot", "/sewa"],
-        ["Owner", "/owner"],
+        ["SEDEKAH", "/donasi"],
+        ["SEWA BOT", "/sewa"],
+        ["OWNER", "/owner"],
       ],
       m
     );
