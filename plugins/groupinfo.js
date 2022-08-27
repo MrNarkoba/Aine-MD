@@ -32,8 +32,8 @@ ${groupMetadata.desc}
 ${participants.length} Members
 
 *Group Owner:* 
-@AkmalFauzan${m.chat.split`-`
-@Haruka-MD×፝֟͜×${m.chat.split`-`
+@AkmalFauzan${m.
+@Haruka-MD×፝֟͜×${m.
 
 *Group Admin:*
 ${listAdmin}
