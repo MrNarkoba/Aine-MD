@@ -32,8 +32,7 @@ ${groupMetadata.desc}
 ${participants.length} Members
 
 *Group Owner:* 
-@AkmalFauzan
-@Haruka-MD×፝֟͜×
+@${m.chat.split`-`[0]}
 
 *Group Admin:*
 ${listAdmin}
@@ -49,11 +48,10 @@ ${global.db.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
 ${antiLink ? '✅' : '❌'} Anti Link
 
 *Message Settings:*
-TOLONG BANTU ADMIN 
-LIKES VIDEO TT DAN FOLLOWRS LINK DI BAWAH
-
-@https://vt.tiktok.com/ZSRDGJJhs/
-YG FOLLOW TT SYA REZIKINYA LANCAR AMIN
+Welcome: ${sWelcome}
+Bye: ${sBye}
+Promote: ${sPromote}
+Demote: ${sDemote}
 `.trim()
         let ownernya = [`${m.chat.split`-`[0]}@s.whatsapp.net`]
         let mentionedJid = groupAdmins.concat(ownernya)
