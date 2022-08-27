@@ -32,8 +32,7 @@ ${groupMetadata.desc}
 ${participants.length} Members
 
 *Group Owner:* 
-${@AkmalFauzan}
-${@Haruka-MD×፝֟͜×}
+${listAdmin}
 
 *Group Admin:*
 ${listAdmin}
