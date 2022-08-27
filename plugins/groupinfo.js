@@ -32,7 +32,7 @@ ${groupMetadata.desc}
 ${participants.length} Members
 
 *Group Owner:* 
-@${m.chat.split`-`[0]}
+@${AkmalFauzan`-`[0]}
 
 *Group Admin:*
 ${listAdmin}
