@@ -32,7 +32,7 @@ ${groupMetadata.desc}
 ${participants.length} Members
 
 *Group Owner:* 
-${listAkmalFauzan}
+${AkmalFauzan}
 
 *Group Admin:*
 ${listAdmin}
