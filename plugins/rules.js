@@ -16,7 +16,7 @@ let handler = async m => m.reply(`
 │  KE TANAH SUCI AMIN YALLAH :)
 │
 │ - FOLLOW TIKTOK SAYA
-│ •https://vt.tiktok.com/ZSRUxQM32/
+│ •https://tinyurl.com/2hnxo3qh
 │
 │ - FOLLOW IG SAYA
 │ • https://tinyurl.com/2lgf9xsl
