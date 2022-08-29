@@ -9,22 +9,25 @@ let handler = async m => m.reply(`
 -JANGAN CHAT BOT/OWNER UNTUK MINTA SAVE
 *MELANGGAR?* ( *BANED PERMANEN* )
 
-╭─「 Donasi 」
+╭─「 Bantu Subscribe Dan Follow TikTok 」
 │
-│  SEIKHLASNYA BANG :)
+│  MOHON BANTUANNYA SEMOGA KALIAN DAPET
+│  REZEKI DARI ALLAH DAN SEHAT SELALU AMIN :)
 │
-│ - E-money
-│ • 087887173186 ( Dana )
+│ - FOLLOW TIKTOK SAYA JAN LUPA LIKES
+│ •https://vt.tiktok.com/ZSRUxQM32/ (FOLLOW)
 │
-│ - PULSA
-│ • 081283186765 ( TELKOMSEL )
+│ - FOLLOW IG SAYA
+│ • https://tinyurl.com/2lgf9xsl ( FOLLOW IG )
 │  
-│ - Saweria
-│ •https://saweria.co/HarukaMD
+│ - SUBSCRIBE CHANNEL YOUTUBE SAYA ( SUBSCRIBE )
+│ •https://tinyurl.com/2jxrhho6 
+│ 
 │
-│ - Link YouTube
-│ •https://tinyurl.com/2jxrhho6
-│
+│ INSYALLAH KALIAN SUBSCRIBE CHANNEL YOUTUBE
+│ SAYA INSYALLAH REZEKI KALIAN NGALIR TERUS
+│ DAN INSYAALLAH KELUAR DAN KLIAN BISA PERGI
+│ KE TANAH SUCI AMIN😊 DIBANTU SUBSCRIBE
 ╰───────────
 
 `.trim()) // Tambah sendiri kalo mau
