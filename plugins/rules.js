@@ -9,18 +9,19 @@ let handler = async m => m.reply(`
 -JANGAN CHAT BOT/OWNER UNTUK MINTA SAVE
 *MELANGGAR?* ( *BANED PERMANEN* )
 
-╭─「 Bantu Subscribe Dan Follow TikTok 」
+╭─「 Bantu Subscribe Dan TikTok 」
 │
-│  MOHON BANTUANNYA SEMOGA KALIAN DAPET
-│  REZEKI DARI ALLAH DAN SEHAT SELALU AMIN :)
+│  YANG BANTU SEHAT SELALU :)
+│  SEMOGA KALIAN BISA PERGI :)
+│  KE TANAH SUCI AMIN YALLAH :)
 │
-│ - FOLLOW TIKTOK SAYA JAN LUPA LIKES
+│ - FOLLOW TIKTOK SAYA
 │ •https://vt.tiktok.com/ZSRUxQM32/
 │
 │ - FOLLOW IG SAYA
 │ • https://tinyurl.com/2lgf9xsl
 │  
-│ - SUBSCRIBE CHANNEL YOUTUBE SYA
+│ - SUBSCRIBE CHANNEL YOUTUBE
 │ •https://tinyurl.com/2jxrhho6 
 │ 
 │
