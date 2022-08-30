@@ -14,11 +14,11 @@ Selama ${clockString(new Date - user.afk)}
       let user = global.db.data.users[jid]
       if (!user) continue
       let afkTime = user.afk
-      if (!afkTime || afkTime < 0) continue
+      if (!afkTime || afkTime < 1jam) continue
       let reason = user.afkReason || ''
       m.reply(`
 Jangan tag dia!
-Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
+Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'Sedang Sibuk'}
 Selama ${clockString(new Date - afkTime)}
 `.trim())
     }
