@@ -36,7 +36,7 @@ wa.me/${owner[0]}
   products:[{productId:'7487741964584083'}]}],
   headerImage: { productId: '7487741964584083',
   jpegThumbnail: baper },
-  businessOwnerJid: `6285693917497@s.whatsapp.net`
+  businessOwnerJid: `6281283186765@s.whatsapp.net`
   },
   footerText: 'GithubPrivasiMek',
   }},{})
