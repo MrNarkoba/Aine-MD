@@ -3,6 +3,7 @@ let handler = async m => {
 let krtu = `Kartu Intro`
 m.reply(`
 0ཻུ۪۪ꦽꦼ̷⸙‹•══════════════♡᭄
+│     *「 assalamualaikum 」*
 │       *「 Kartu Intro 」*
 │ *Nama     :* 
 │ *Gender   :* 
@@ -11,8 +12,8 @@ m.reply(`
 │ *Kelas      :* 
 │ *Asal         :* 
 │ *Agama    :* 
- |  *Status     :* 
-╰═════ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙
+│*Status     :* 
+╰═════ꪶ ཻུ۪۪ꦽꦼByHaruka-MD×፝֟͜×ꪶ ཻུ۪۪ꦽꦼ̷⸙
 `.trim()) // Tambah sendiri kalo mau
 }
 handler.command = /^(intro)$/i
