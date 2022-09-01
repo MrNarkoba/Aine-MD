@@ -60,7 +60,7 @@ const defaultMenu = {
   footer: '└────\n',
   after: `Made by ᴹᴿHaruka-MD×፝֟͜×*
 *%ᴹᴿHaruka-MD×፝֟͜×@^%*
-${'```%AkmalFauzan```'}
+${'```%AkmalFauzan-MD×፝֟͜×@^%```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
