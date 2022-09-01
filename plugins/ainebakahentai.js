@@ -9,9 +9,9 @@ handler.customPrefix = /^(soundbakahentai)$/i
 handler.command = new RegExp
 
 handler.limit = true
-handler.mods = false 
-handler.premium = false
-handler.group = false 
-handler.private = false
+handler.mods = true 
+handler.premium = true
+handler.group = true
+handler.private = true
 
 module.exports = handler
