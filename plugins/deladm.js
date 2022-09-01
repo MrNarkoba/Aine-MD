@@ -17,5 +17,5 @@ handler.help = ['delete']
 handler.tags = ['info']
 handler.command = /^(deladm)$/i
 handler.limit = false
-handler.public = true
+handler.admin = true
 module.exports = handler
