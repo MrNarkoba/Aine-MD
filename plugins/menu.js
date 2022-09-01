@@ -52,7 +52,7 @@ Hai, %ucapan %name! 🍟
   header: ' *%category*',
   body: ' • %cmd %islimit %isPremium',
   footer: '\n',
-  after: `*Made by Ren*
+  after: `*Made by ᴹᴿHaruka-MD×፝֟͜×*
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -155,9 +155,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendHydrated(m.chat, text.trim(), 'Gausah spam anjg', null, 'https://chat.whatsapp.com/JOv5lbAjqTQ4JP7pAm6r6D', 'Group Bot', '', '', [
+    conn.sendHydrated(m.chat, text.trim(), 'Gausah spam anjg Follow TT GUA YA', null, 'tiktok.com/@mrharuka', 'TIK TOK', '', '', [
       ['Sedekah', '/donasi'],
-      ['Owner', '/owner'],
+      ['Sewa Bot', '/sewa Bot'],
       ['Rules', '/rules']
     ], m)
     /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
