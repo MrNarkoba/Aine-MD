@@ -35,7 +35,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-Hai, %ucapan %name! 🍟
+Hai, %ucapan %name! 🙏
   
 *Waktu:* 
 %wib WIB
@@ -156,9 +156,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.sendHydrated(m.chat, text.trim(), 'Gausah spam anjg Follow TT GUA YA', null, 'tiktok.com/@mrharuka', 'TIK TOK', '', '', [
-      ['Sedekah', '/donasi'],
-      ['Sewa Bot', '/sewa Bot'],
-      ['Rules', '/rules']
+      ['Sedekah💰', '/donasi💰'],
+      ['Sewa Bot🤖', '/sewa Bot🤖'],
+      ['Rules❗', '/rules❗']
     ], m)
     /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
     let res = await fetch(url)
