@@ -35,7 +35,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-Hai, %ucapan %name! 👋
+Hai, %ucapan %name! 🍟
   
 *Waktu:* 
 %wib WIB
@@ -52,9 +52,7 @@ Hai, %ucapan %name! 👋
   header: ' *%category*',
   body: ' • %cmd %islimit %isPremium',
   footer: '\n',
-  after: `*Made by ᴹᴿHaruka-MD×፝֟͜×*
-*%npmname* | %version
-${'```%npmdesc```'}
+  after: `*Made by Ren*
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -157,12 +155,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendButton(m.chat, text.trim(), 'Made with ♡ by ᴹᴿHaruka-MD×፝֟͜×', null, [['🎗Donasi🎗', '.🎗donasi🎗'],['🏅Owner🏅', '.🏅owner🏅']], m)
-    /*conn.sendHydrated(m.chat, text.trim(), 'Ⓟ premium | Ⓛ limit', null, 'https://www.instagram.com/haruka.md04/', 'INSTAGRAM/', '', '', [
-      ['Donate', '/donasi'],
-      ['Sewa Bot', '/sewa'],
+    conn.sendHydrated(m.chat, text.trim(), 'Gausah spam anjg', null, 'https://chat.whatsapp.com/JOv5lbAjqTQ4JP7pAm6r6D', 'Group Bot', '', '', [
+      ['Sedekah', '/donasi'],
+      ['Owner', '/owner'],
       ['Rules', '/rules']
-    ], m)*/
+    ], m)
     /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
     let res = await fetch(url)
     let buffer = await res.buffer()
@@ -172,26 +169,26 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                         hydratedTemplate: {
                             imageMessage: message.imageMessage,
                             hydratedContentText: text.trim(),
-                            hydratedFooterText:'Ⓟ premium | Ⓛ limit',
+                            hydratedFooterText:'gausah spam anjg',
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Website',
-                                    url: 'https://Ainebot.github.io/'
+                                    displayText: 'Grup WhatsApp',
+                                    url: 'https://chat.whatsapp.com/JOv5lbAjqTQ4JP7pAm6r6D'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Donasi',
+                                    displayText: 'Sedekah',
                                     id: '/donasi'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Sewa',
-                                    id: '/sewa'
-                                }  
+                                    displayText: 'Pemilik Bot',
+                                    id: '/owner'
+                                }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Owner',
-                                    id: '/owner'
+                                    displayText: 'Rules Bot',
+                                    id: '/rules'
                                 }
                             }]
                         }
