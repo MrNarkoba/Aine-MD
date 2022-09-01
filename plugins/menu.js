@@ -1,149 +1,77 @@
-let levelling = require('../lib/levelling')
+const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
+let levelling = require('../lib/levelling')
+let tags = {
+  'rpgabsen': 'Rpg-Absen',
+  'rpg': 'Rpg',
+  'game': 'Game',
+  'xp': 'Exp, Limit & Pay',
+  'sticker': 'Sticker',
+  'main': 'Main',
+  'kerang': 'Kerang Ajaib',
+  'quotes': 'Quotes',
+  'admin': 'Admin',
+  'group': 'Group',
+  'internet': 'Internet',
+  'anonymous': 'Anonymous Chat',
+  'downloader': 'Downloader',
+  'berita': 'Berita',
+  'tools': 'Tools',
+  'fun': 'Fun',
+  'database': 'Database', 
+  'vote': 'Voting',
+  'absen': 'Absen',
+  'catatan': 'Catatan',
+  'jadian': 'Jadian',
+  'islami': 'Islami',
+  'owner': 'Owner',
+  'advanced': 'Advanced',
+  'info': 'Info',
+  'audio': 'Audio',
+  'maker': 'Maker',
+}
 const defaultMenu = {
   before: `
-┌─〔 %me 〕
-├ *%ucapan %name*
-│
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
-│
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
-│
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ %github
-└────
-%readmore`.trim(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
-  after: `
-*%npmname@^%version*
+Hai, %ucapan %name! 👋
+  
+*Waktu:* 
+%wib WIB
+%wita WITA
+%wit WIT
+*Hari:* %week
+*Tanggal:* %date
+*Uptime:* %uptime (%muptime)
+
+*Limit:* %limit
+*Level:* %level
+*XP:* %exp
+%readmore`.trimStart(),
+  header: ' *%category*',
+  body: ' • %cmd %islimit %isPremium',
+  footer: '\n',
+  after: `*Made by ♡*
+*%npmname* | %version
 ${'```%npmdesc```'}
 `,
 }
-let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-
-  let tags
-  let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
-  if (!arrayMenu.includes(teks)) teks = '404'
-  if (teks == 'all') tags = {
-    'main': 'UTAMA',
-    'game': 'Game',
-    'rpg': 'RPG',
-    'xp': 'Exp & Limit',
-    'sticker': 'Stiker',
-    'kerang': 'Kerang Ajaib',
-    'quotes': 'Quotes',
-    'group': 'Grup',
-    'premium': 'Premium',
-    'internet': 'Internet',
-    'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
-    'downloader': 'Downloader',
-    'tools': 'Tools',
-    'fun': 'Fun',
-    'database': 'Database',
-    'vote': 'Voting',
-    'absen': 'Absen',
-    'quran': 'Al Qur\'an',
-    'audio': 'Pengubah Suara',
-    'jadibot': 'Jadi Bot',
-    'info': 'Info',
-    '': 'Tanpa Kategori',
-  }
-  if (teks == 'game') tags = {
-    'game': 'Game',
-    'rpg': 'RPG'
-  }
-  if (teks == 'xp') tags = {
-    'xp': 'Exp & Limit'
-  }
-  if (teks == 'stiker') tags = {
-    'sticker': 'Stiker'
-  }
-  if (teks == 'kerangajaib') tags = {
-    'kerang': 'Kerang Ajaib'
-  }
-  if (teks == 'quotes') tags = {
-    'quotes': 'Quotes'
-  }
-  if (teks == 'grup') tags = {
-    'group': 'Grup'
-  }
-  if (teks == 'premium') tags = {
-    'premium': 'Premium'
-  }
-  if (teks == 'internet') tags = {
-    'internet': 'Internet'
-  }
-  if (teks == 'anonymous') tags = {
-    'anonymous': 'Anonymous Chat'
-  }
-  if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
-  }
-  if (teks == 'downloader') tags = {
-    'downloader': 'Downloader'
-  }
-  if (teks == 'tools') tags = {
-    'tools': 'Tools'
-  }
-  if (teks == 'fun') tags = {
-    'fun': 'Fun'
-  }
-  if (teks == 'database') tags = {
-    'database': 'Database'
-  }
-  if (teks == 'vote') tags = {
-    'vote': 'Voting',
-    'absen': 'Absen'
-  }
-  if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
-  }
-  if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
-  }
-  if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
-  }
-  if (teks == 'info') tags = {
-    'info': 'Info'
-  }
-  if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
-  }
-  if (teks == 'owner') tags = {
-    'owner': 'Owner',
-    'host': 'Host',
-    'advanced': 'Advanced'
-  }
-
-
-
+let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, age, money, level, role, registered } = global.db.data.users[m.sender]
+    let { exp, limit, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let umur = `*${age == '-1' ? 'Belum Daftar*' : age + '* Thn'}`
-    let name = registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
+    let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     // d.getTimeZoneOffset()
     // Offset -420 is 18.00
     // Offset    0 is  0.00
     // Offset  420 is  7.00
+    const wib = moment.tz('Asia/Jakarta').format("HH:mm:ss")
+    const wita = moment.tz('Asia/Makassar').format("HH:mm:ss")
+    const wit = moment.tz('Asia/Jayapura').format("HH:mm:ss")
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
@@ -172,12 +100,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     }
     let muptime = clockString(_muptime)
     let uptime = clockString(_uptime)
-    global.jam = time
     let totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
     let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
       return {
-        help: Array.isArray(plugin.help) ? plugin.help : [plugin.help],
+        help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
         limit: plugin.limit,
@@ -185,62 +112,16 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         enabled: !plugin.disabled,
       }
     })
-    if (teks == '404') {
-      let judul = `${global.ucapan}, ${name}`.trim()
-      const sections = [
-      {
-        title: 'List Menu ' + namabot,
-        rows: [
-          { title: 'Semua Perintah', rowId: `${_p}? all` },
-          { title: 'Game', rowId: `${_p}? game` },
-          { title: 'XP', rowId: `${_p}? xp` },
-          { title: 'Stiker', rowId: `${_p}? stiker` },
-          { title: 'Kerang Ajaib', rowId: `${_p}? kerangajaib` },
-          { title: 'Quotes', rowId: `${_p}? quotes` },
-          { title: 'Grup', rowId: `${_p}? grup` },
-          { title: 'Premium', rowId: `${_p}? premium` },
-          { title: 'Internet', rowId: `${_p}? internet` },
-          { title: 'Anonymous', rowId: `${_p}? anonymous` },
-          { title: 'Nulis & Logo', rowId: `${_p}? nulis` },
-          { title: 'Downloader', rowId: `${_p}? downloader` },
-          { title: 'Tools', rowId: `${_p}? tools` },
-          { title: 'Fun', rowId: `${_p}? fun`},
-          { title: 'Database', rowId: `${_p}? database` },
-          { title: 'Vote & Absen', rowId: `${_p}? vote` },
-          { title: "Al-Qur\'an", rowId: `${_p}? quran` },
-          { title: 'Pengubah Suara', rowId: `${_p}? audio` },
-          { title: 'Jadi Bot', rowId: `${_p}? jadibot` },
-          { title: 'Info', rowId: `${_p}? info` },
-          { title: 'Tanpa Kategori', rowId: `${_p}? tanpakategori` },
-          { title: 'Owner', rowId: `${_p}? owner` },
-        ]
-      }
-    ]
-    const listMessage = {
-      text: judul,
-      footer: wm,
-      mentions: await conn.parseMention(judul),
-      title: '',
-      buttonText: "Klik Disini",
-      sections
-    }
-    return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
-    
-    }
-
-    let groups = {}
-    for (let tag in tags) {
-      groups[tag] = []
-      for (let plugin of help)
-        if (plugin.tags && plugin.tags.includes(tag))
-          if (plugin.help) groups[tag].push(plugin)
-    }
+    for (let plugin of help)
+      if (plugin && 'tags' in plugin)
+        for (let tag of plugin.tags)
+          if (!(tag in tags) && tag) tags[tag] = tag
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || defaultMenu.before
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -248,8 +129,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '(Ⓛ)' : '')
+                .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
                 .trim()
             }).join('\n')
           }),
@@ -261,40 +142,71 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
     let replace = {
       '%': '%',
-      ucapan: global.ucapan,
       p: _p, uptime, muptime,
-      me: conn.user.name,
+      me: conn.getName(conn.user.jid),
+      ucapan: ucapan(),
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
-      xp4levelup: max - exp <= 0 ? `Siap untuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`,
+      xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, fla + teks, text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}infobot`)
+    conn.sendButton(m.chat, text.trim(), 'Made with ♡ by Aine', null, [['Donasi', '.donasi'],['Owner', '.owner']], m)
+    /*conn.sendHydrated(m.chat, text.trim(), 'Ⓟ premium | Ⓛ limit', null, 'https://aiinne.github.io/', 'Website', '', '', [
+      ['Donate', '/donasi'],
+      ['Sewa Bot', '/sewa'],
+      ['Owner', '/owner']
+    ], m)*/
+    /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
+    let res = await fetch(url)
+    let buffer = await res.buffer()
+    let message = await prepareWAMessageMedia({ image: buffer }, { upload: conn.waUploadToServer })
+                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: text.trim(),
+                            hydratedFooterText:'Ⓟ premium | Ⓛ limit',
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'Website',
+                                    url: 'https://Ainebot.github.io/'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Donasi',
+                                    id: '/donasi'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Sewa',
+                                    id: '/sewa'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Owner',
+                                    id: '/owner'
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                conn.relayMessage(m.chat, template.message, { messageId: template.key.id })*/
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(m(enu)?|help|\?)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
+handler.command = /^(menu|help|\?)$/i
 
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
 handler.exp = 3
 
 module.exports = handler
@@ -308,20 +220,22 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
+
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Selamat dinihari"
-  if (time >= 4) {
-    res = "Selamat pagi"
-  }
-  if (time > 10) {
-    res = "Selamat siang"
-  }
-  if (time >= 15) {
-    res = "Selamat sore"
-  }
-  if (time >= 18) {
-    res = "Selamat malam"
-  }
-  return res
+        const hour_now = moment.tz('Asia/Jakarta').format('HH')
+        var ucapanWaktu = 'Pagi kak'
+        if (hour_now >= '03' && hour_now <= '10') {
+          ucapanWaktu = 'Pagi kak'
+        } else if (hour_now >= '10' && hour_now <= '15') {
+          ucapanWaktu = 'Siang kak'
+        } else if (hour_now >= '15' && hour_now <= '17') {
+          ucapanWaktu = 'Sore kak'
+        } else if (hour_now >= '17' && hour_now <= '18') {
+          ucapanWaktu = 'Selamat Petang kak'
+        } else if (hour_now >= '18' && hour_now <= '23') {
+          ucapanWaktu = 'Malam kak'
+        } else {
+          ucapanWaktu = 'Selamat Malam!'
+        }	
+        return ucapanWaktu
 }
