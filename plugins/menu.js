@@ -35,7 +35,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-Hai, %ucapan %name! 🙏
+Hai, %ucapan %name! 
 │
 ├ Tersisa *%limit Limit*
 ├ Role *%role*
@@ -48,18 +48,16 @@ Hai, %ucapan %name! 🙏
 │
 ├ Uptime: *%uptime (%muptime)*
 ├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ %github
+├ Instagram:https://www.instagram.com/haruka.md04/
+├ %instagram
 └────
-
-*Limit:* %limit
-*Level:* %level
-*XP:* %exp
-%readmore`.trimStart(),
-  header: ' *%category*',
-  body: ' • %cmd %islimit %isPremium',
-  footer: '\n',
-  after: `*Made by ᴹᴿHaruka-MD×፝֟͜×*
+%readmore`.trim(),
+  header: '┌─〔 %category 〕',
+  body: '├ %cmd %islimit %isPremium',
+  footer: '└────\n',
+  after: `Made by ᴹᴿHaruka-MD×፝֟͜×*
+*%npmname@^%version*
+${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
