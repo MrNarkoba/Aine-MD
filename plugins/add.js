@@ -83,7 +83,7 @@ handler.help = ['add 628xx']
 handler.tags = ['group']
 handler.command = /^(add)$/i
 
-handler.admin = true
+handler.public = true
 handler.group = true
 handler.botAdmin = true
 
