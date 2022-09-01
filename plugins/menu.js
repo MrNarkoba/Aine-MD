@@ -35,7 +35,8 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-Hai, %ucapan %name! 
+┌─〔 %me 〕
+├ *%ucapan %name*
 │
 ├ Tersisa *%limit Limit*
 ├ Role *%role*
@@ -48,8 +49,8 @@ Hai, %ucapan %name!
 │
 ├ Uptime: *%uptime (%muptime)*
 ├ Database: %rtotalreg dari %totalreg
-├ Instagram:https://www.instagram.com/haruka.md04/
-├ %instagram
+├ Instragram:https://tinyurl.com/2qv6qlhf
+├ %github
 └────
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
