@@ -59,7 +59,7 @@ const defaultMenu = {
   body: '├ %cmd %islimit %isPremium',
   footer: '└────\n',
   after: `Made by ᴹᴿHaruka-MD×፝֟͜×*
-*%npmname@^%version*
+*%ᴹᴿHaruka-MD×፝֟͜×@^%version*
 ${'```%npmdesc```'}
 `,
 }
