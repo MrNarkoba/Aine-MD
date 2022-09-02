@@ -35,7 +35,6 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-
 ┌────────
 ├〔 %me 〕
 │
@@ -55,7 +54,7 @@ const defaultMenu = {
 ├ Database: %rtotalreg dari %totalreg
 ├ instagram:https://tinyurl.com/2qv6qlhf
 ├ %instagram
-└────
+└────────────────────────────
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
