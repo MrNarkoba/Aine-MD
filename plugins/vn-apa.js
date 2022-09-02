@@ -5,7 +5,7 @@ sendFile(m.chat, kenapa '', m, true)
 }
 
 handler.customPrefix = /^(Ppp|P|Pp|Apa|Nani?|Kenapa)$/i
-handler.command = new RegExp
+handler.command = RegExp
 
 handler.limit = true
 handler.mods = false 
