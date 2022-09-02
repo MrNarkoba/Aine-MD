@@ -45,7 +45,7 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
     	const invite_code_exp = content.attrs.expiration
     	const txt = `Mengundang @${jid.split('@')[0]} menggunakan invite...`
     	await m.reply(txt, null, {
-    		mentions: await conn.parseMention(txt)
+    		mentions: await conn.parseMention(txt) 
     	})
     	await conn.delay(1000)
     	//conn.sendButton(m.chat, txt, wm, 'menu', '.m', m)
@@ -56,9 +56,9 @@ handler.help = ['add'].map(v => v + ' @user')
 handler.tags = ['group']
 handler.command = /^(add)$/i
 
-handler.public = true
+handler.admin = false
 handler.group = true
-handler.botAdmin = true
+handler.botAdmin = false
 handler.fail = null
 
 module.exports = handler
@@ -83,9 +83,9 @@ handler.help = ['add 628xx']
 handler.tags = ['group']
 handler.command = /^(add)$/i
 
-handler.public = true
+handler.admin = false
 handler.group = true
-handler.botAdmin = true
+handler.botAdmin = false
 
 module.exports = handler
 
