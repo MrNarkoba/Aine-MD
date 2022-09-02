@@ -4,8 +4,8 @@ let kenapa = fs.readSync('./mp3/apa.opus')
 sendFile(m.chat, kenapa '', m, true)
 }
 
-handler.customPrefix = /^(Ppp|P|Pp|Apa|Nani?|Kenapa)$
-handler.command =RegExp
+handler.customPrefix = /^(Ppp|P|Pp|Apa|Nani?|Kenapa)$/i
+handler.command = new RegExp
 
 handler.limit = true
 handler.mods = false 
