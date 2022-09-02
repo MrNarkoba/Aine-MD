@@ -10,7 +10,8 @@ handler.command = new RegExp
 handler.limit = true
 handler.mods = false 
 handler.premium = false
-handler.group = false 
+handler.group = true
 handler.private = false
+
 
 module.exports = handler
