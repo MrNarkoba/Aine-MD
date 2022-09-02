@@ -1,10 +1,10 @@
 let fs = require('fs')
 let handler = async (m) => {
-let kenapa = fs.readFileSync('./mp3/apa.opus')
-conn.sendFile(m.chat, kenapa, '', '', m, true)
+let helloaine = fs.readFileSync('./mp3/kawai.opus')
+conn.sendFile(m.chat, helloaine, '', '', m, true)
 }
 
-handler.customPrefix = /^(Ppp|P|Pp|Apa|Nani?|Kenapa)$/i
+handler.customPrefix = /^(kawai|kawaii)$/i
 handler.command = new RegExp
 
 handler.limit = true
