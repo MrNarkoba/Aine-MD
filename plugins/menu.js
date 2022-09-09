@@ -35,33 +35,28 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-┌────────
-├〔 %me 〕
-│
-│
-├ Hai, %ucapan %name! 👋
-│
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
-│
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
-│
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ instagram:https://tinyurl.com/2qv6qlhf
-├ %instagram
-└────────────────────────────
-%readmore`.trim(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
-  after: `Made by ᴹᴿBayy-MB×፝֟͜×*
-*%ᴹᴿBayy-MB×፝֟͜×@^%*
-${'```%ᴹᴿBayy-MB×፝֟͜×@^%```'}
+*Hai, %ucapan %name 👋*
+
+*╔❐*
+*╠ ➢ WAKTU:* 
+*╠ ➢ %wib WIB*
+*╠ ➢ %wita WITA*
+*╠ ➢ %wit WIT*
+*╠ ➢ Hari: %week*
+*╠ ➢ Tanggal: %date*
+*╠ ➢ Uptime: %uptime (%muptime)*
+*║*
+*╠ ➢ Limit: %limit*
+*╠ ➢ Level: %level*
+*╠ ➢ XP: %exp*
+*╚❐*
+%readmore`.trimStart(),
+  header: ' *%category*',
+  body: ' • %cmd %islimit %isPremium',
+  footer: '\n',
+  after: `*Made by MtrLnaOkt*
+*%npmname* | %version
+${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -164,11 +159,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendHydrated(m.chat, text.trim(), 'Gausah spam anjg Follow TT GUA YA', null, 'tiktok.com/@mrharuka', 'TIK TOK', '', '', [
-      ['Sedekah💰', '/donasi💰'],
-      ['Sewa Bot🤖', '/sewa Bot🤖'],
-      ['Rules❗', '/rules❗']
-    ], m)
+    conn.sendButton(m.chat, text.trim(), '🚫NO TELPON BOT', null, [['【 DONASI KAK 人々の寄付 😊 】', '.donasi'],['【 SEWA BOT 高価トを購入🤖 】', '.sewa'],['【 OWNER BOT ボット所有者♥️ 】', '.owner']], m)
+    /*conn.sendHydrated(m.chat, text.trim(), 'Ⓟ premium | Ⓛ limit', null, 'tiktok.com/@mrharuka/', 'TikTok', '', '', [
+      ['Donate', '/donasi'],
+      ['Sewa Bot', '/sewa'],
+      ['Owner', '/owner']
+    ], m)*/
     /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
     let res = await fetch(url)
     let buffer = await res.buffer()
@@ -178,26 +174,26 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                         hydratedTemplate: {
                             imageMessage: message.imageMessage,
                             hydratedContentText: text.trim(),
-                            hydratedFooterText:'gausah spam anjg',
+                            hydratedFooterText:'Ⓟ premium | Ⓛ limit',
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Grup WhatsApp',
-                                    url: 'https://chat.whatsapp.com/JOv5lbAjqTQ4JP7pAm6r6D'
+                                    displayText: 'Website',
+                                    url: 'https://Ainebot.github.io/'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Sedekah',
+                                    displayText: 'Donasi',
                                     id: '/donasi'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Pemilik Bot',
-                                    id: '/owner'
-                                }
+                                    displayText: 'Sewa',
+                                    id: '/sewa'
+                                }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Rules Bot',
-                                    id: '/rules'
+                                    displayText: 'Owner',
+                                    id: '/owner'
                                 }
                             }]
                         }
