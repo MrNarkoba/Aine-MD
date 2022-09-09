@@ -59,9 +59,9 @@ const defaultMenu = {
   header: '┌─〔 %category 〕',
   body: '├ %cmd %islimit %isPremium',
   footer: '└────\n',
-  after: `Made by ᴹᴿHaruka-MD×፝֟͜×*
-*%ᴹᴿHaruka-MD×፝֟͜×@^%*
-${'```%AkmalFauzan-MD×፝֟͜×@^%```'}
+  after: `Made by ᴹᴿBayy-MB×፝֟͜×*
+*%ᴹᴿBayy-MB×፝֟͜×@^%*
+${'```%ᴹᴿBayy-MB×፝֟͜×@^%```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
