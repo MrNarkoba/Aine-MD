@@ -58,7 +58,7 @@ fs.watchFile(file_exif, () => {
 // Sticker WM
 packname = sticker_name
 author = sticker_author
-wm = '© AkmalFauzan-MD×፝֟͜×'
+wm = '© ᴹᴿBAYY-MD×፝֟͜×
 
 Intervalmsg = 1800 //detik
 
